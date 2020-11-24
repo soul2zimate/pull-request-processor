@@ -17,3 +17,10 @@ Way to invoke
 
 Example: 
 java -jar -Daphrodite.config=${PULL_REQUEST_PROCESSOR_HOME}/aphrodite-test.json -Dstreams.json=${PULL_REQUEST_PROCESSOR_HOME}/streams.json ${PULL_REQUEST_PROCESSOR_HOME}/target/pull-processor-0.8.0-SNAPSHOT.jar -s jboss-eap-7.0.z[jbossas-jboss-eap7,jbossas-wildfly-core-eap] -p jboss-eap-7.0.z[jbossas-jboss-eap7,jbossas-wildfly-core-eap] -f ${PULL_REQUEST_PROCESSOR_HOME}/report.html -w false
+
+
+Thunder job run with: `java -jar -Daphrodite.config=/path/to/aphrodite.properties.json -s jboss-eap-7.2.z[wildfly-wildfly,wildfly-wildfly-core], jboss-eap-7.3.z[wildfly-wildfly,wildfly-wildfly-core] -p jboss-eap-7.2.z[wildfly-wildfly,wildfly-wildfly-core], jboss-eap-7.3.z[wildfly-wildfly,wildfly-wildfly-core] -f ${WORKSPACE}/report.html -w true`
+
+Quarkus run with: `java -Daphrodite.config=/path/to/aphrodite.properties.json.example -jar target/quarkus-app/quarkus-run.jar`
+
+See application.properties for configuration details.

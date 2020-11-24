@@ -47,8 +47,10 @@ public class Main {
     public void start(List<StreamDefinition> parsedStreams, List<StreamDefinition> writePermittedStreams, String reportFile,
             Boolean performWriteOperations) throws Exception {
         logger.info("initializing....");
-        try (Aphrodite aphrodite = Aphrodite.instance();
+        try (
                 ClosableHackForExecutor executor = new ClosableHackForExecutor(Executors.newFixedThreadPool(12));) {
+
+            Aphrodite aphrodite = Aphrodite.instance();
 
             simpleContainer.register(Aphrodite.class.getSimpleName(), aphrodite);
             GithubPullRequestHomeService GithubPullRequestHomeService = new GithubPullRequestHomeService(aphrodite);
